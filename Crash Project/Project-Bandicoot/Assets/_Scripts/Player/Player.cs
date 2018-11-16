@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
 
         // Crouch
 
-        if (controller.isGrounded && Input.GetButton("Fire2"))
+        if (controller.isGrounded && Input.GetButton("Fire1"))
         {
             anim.SetBool("isDown", true);
             moveSpeed = 4f;
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
         //Punch
 
-        if (Input.GetButtonDown("Fire1")  && controller.isGrounded)
+        if (Input.GetButtonDown("Fire4")  && controller.isGrounded)
         {
             PunchBox.SetActive(true);
             Invoke("Punchy", 1f);
