@@ -10,9 +10,15 @@ public class Crate : MonoBehaviour {
     public float destoryTime;
     public GameObject CrateMesh1;
     public GameObject CrateMesh2;
+    public GameObject NitroBlowUp;
     public BoxCollider cratecollider;
+
+    public bool IsNitro;
     // Use this for initialization
     void Start () {
+
+        NitroBlowUp.SetActive(false);
+
         if (CrateHealth == 0)
         {
             FindObjectOfType<GameManager>().AddBox(CrateVaule);
@@ -33,6 +39,15 @@ public class Crate : MonoBehaviour {
             Destroy(cratecollider);
             Destroy(gameObject, destoryTime);
         }
+
+        if (IsNitro == true && CrateHealth == 0)
+        {
+            Destroy(CrateMesh1);
+            Destroy(CrateMesh2);
+            Destroy(cratecollider);
+            NitroBlowUp.SetActive(true);
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,7 +58,14 @@ public class Crate : MonoBehaviour {
             crateDamnage.Play();
 
         }
+
+        if (other.tag == "Player" && IsNitro == true)
+        {
+            CrateHealth -= 1;
+        }
     }
+
+   
 }
 
     
