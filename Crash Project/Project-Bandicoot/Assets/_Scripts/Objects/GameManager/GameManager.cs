@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     public void AddWumpa(int wumptoadd)
     {
         currentWumps += wumptoadd;
-        wumpatext.text = "WUMPA: " + currentWumps;
+        wumpatext.text = "" + currentWumps;
     }
 
     public void AddBox (int boxtoadd)

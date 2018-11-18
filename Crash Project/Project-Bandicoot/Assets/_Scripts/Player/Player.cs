@@ -26,12 +26,21 @@ public class Player : MonoBehaviour
     public AudioSource jumpSound;
 
     public GameObject PunchBox;
+
+    public GameObject jumpBox;
+
+    public int PunchCount;
+
+    public bool wumpFu;
     // Use this for initialization
     void Start()
     {
         controller = GetComponent<CharacterController>();
         SpinObject.SetActive(false);
         PunchBox.SetActive(false);
+        jumpBox.SetActive(false);
+        wumpFu = true;
+        
     }
 
     // Update is called once per frame
@@ -50,12 +59,16 @@ public class Player : MonoBehaviour
         {
 
             moveDirection.y = 0f;
-
+            jumpBox.SetActive(false);
             if (Input.GetButtonDown("Jump"))
             {
                 moveDirection.y = jumpForce;
                 jumpSound.Play();
+                jumpBox.SetActive(true);
+
             }
+
+            
 
         }
 
@@ -86,20 +99,46 @@ public class Player : MonoBehaviour
             moveSpeed = 6f;
         }
 
-
-
-        //Punch
-
-        if (Input.GetButtonDown("Fire4")  && controller.isGrounded)
+        if (wumpFu = true)
         {
-            PunchBox.SetActive(true);
-            Invoke("Punchy", 1f);
-            anim.SetTrigger("Punch");
+
+
+
+            //Punch
+
+            if (Input.GetButtonDown("Fire4") && controller.isGrounded)
+            {
+                anim.SetInteger("Punch",1);
+                PunchCount += 1;
+                PunchBox.SetActive(true);
+                Invoke("Punchy", .5f);
+            }
+
+            if (Input.GetButtonDown("Fire4") && controller.isGrounded && PunchCount == 2)
+            {
+                anim.SetInteger("Punch", 2);
+                PunchCount += 1;
+                PunchBox.SetActive(true);
+                Invoke("Punchy", .5f);
+            }
+
+            if (Input.GetButtonDown("Fire4") && controller.isGrounded && PunchCount == 3)
+            {
+                anim.SetInteger("Punch", 3);
+                PunchCount += 1;
+                PunchBox.SetActive(true);
+                Invoke("Punchy", .5f);
+            }
+
+            if (Input.GetButtonDown("Fire4") && controller.isGrounded && PunchCount == 4)
+            {
+                anim.SetInteger("Punch", 2);
+                PunchCount = 0;
+                PunchBox.SetActive(true);
+                Invoke("Punchy", .5f);
+            }
+
         }
-
-
-
-
         //
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
@@ -130,6 +169,14 @@ public class Player : MonoBehaviour
     void Punchy()
     {
         PunchBox.SetActive(false);
+        anim.SetInteger("Punch", 0);
+
     }
 
+    void Jumper()
+    {
+        jumpBox.SetActive(true);
+    }
+
+    
 }
