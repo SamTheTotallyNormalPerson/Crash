@@ -101,11 +101,14 @@ public class Player : MonoBehaviour
 
         // Flop
 
-        if (Input.GetButtonDown("Fire1") && !controller.isGrounded)
+        if (!controller.isGrounded && Input.GetButton("Fire1"))
             {
-                anim.SetBool("Flop", !controller.isGrounded);
+                anim.SetBool("Flop", true);
             }
-         
+         else
+            {
+                anim.SetBool("Flop", false);
+            }
 }
 
         if (wumpFu == true)
