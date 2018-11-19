@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
 
         // Spin
 
-        if (Input.GetButtonDown("Spin"))
+        if (Input.GetButtonDown("Spin")) { 
         {
             Invoke("Sppin", 1f);
             SpinObject.SetActive(true);
@@ -99,7 +99,16 @@ public class Player : MonoBehaviour
             moveSpeed = 6f;
         }
 
-        if (wumpFu = true)
+        // Flop
+
+        if (Input.GetButtonDown("Fire1") && !controller.isGrounded)
+            {
+                anim.SetBool("Flop", !controller.isGrounded);
+            }
+         
+}
+
+        if (wumpFu == true)
         {
 
 
