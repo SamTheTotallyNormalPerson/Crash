@@ -12,10 +12,13 @@ public class Crate : MonoBehaviour {
     public GameObject CrateMesh2;
     public GameObject NitroBlowUp;
     public BoxCollider cratecollider;
-
+    public GameObject masky;
     public bool IsNitro;
+    public bool IsAkuAku;
     // Use this for initialization
     void Start () {
+
+        
 
         NitroBlowUp.SetActive(false);
 
@@ -48,6 +51,16 @@ public class Crate : MonoBehaviour {
             NitroBlowUp.SetActive(true);
 
         }
+
+        if (IsAkuAku == true && CrateHealth == 0)
+        {
+            Destroy(CrateMesh1);
+            Destroy(CrateMesh2);
+            Destroy(cratecollider);
+            Instantiate(masky, transform.position, transform.rotation);
+            Destroy(gameObject);
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,7 +75,9 @@ public class Crate : MonoBehaviour {
         if (other.tag == "Player" && IsNitro == true)
         {
             CrateHealth -= 1;
+            
         }
+
     }
 
    

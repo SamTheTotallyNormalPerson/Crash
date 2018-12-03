@@ -123,7 +123,7 @@ Transform:
   - {fileID: 4981989092917882}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -53.625004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4981989092917882
 Transform:
   m_ObjectHideFlags: 1
@@ -302,7 +302,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 61c7c4abc43743d4c97e4888bd9bc188, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -421,6 +421,9 @@ MonoBehaviour:
   destoryTime: 1
   CrateMesh1: {fileID: 1621111789320036}
   CrateMesh2: {fileID: 1421031985647082}
-  NitroBlowUp: {fileID: 0}
+  NitroBlowUp: {fileID: 1957105239462174, guid: 632387cf38a9ecb49adbedca966ad8eb,
+    type: 2}
   cratecollider: {fileID: 65243354932881654}
+  masky: {fileID: 1904800670259382, guid: a56548f0217e59f49835b656b67571db, type: 2}
   IsNitro: 0
+  IsAkuAku: 0
