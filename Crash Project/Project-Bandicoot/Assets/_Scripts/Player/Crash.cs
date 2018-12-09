@@ -39,7 +39,8 @@ public class Crash : MonoBehaviour
 
     public float health;
 
-    public GameObject ahhh;
+
+   
 
     // Use this for initialization
     void Start()
@@ -230,5 +231,26 @@ public class Crash : MonoBehaviour
             health -=1;
            
         }
+        
+
+        
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.savePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        CrashData data = SaveSystem.LoadPlayer();
+
+        health = data.health;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
     }
 }
