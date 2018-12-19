@@ -9,6 +9,7 @@ TagManager:
   - Death
   - MaskPickUp
   - SaveArea
+  - Jump
   layers:
   - Default
   - TransparentFX

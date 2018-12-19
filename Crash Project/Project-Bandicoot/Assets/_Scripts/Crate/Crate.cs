@@ -15,6 +15,7 @@ public class Crate : MonoBehaviour {
     public GameObject masky;
     public bool IsNitro;
     public bool IsAkuAku;
+    public bool IsTnt;
     // Use this for initialization
     void Start () {
 
@@ -61,6 +62,18 @@ public class Crate : MonoBehaviour {
             Destroy(gameObject);
 
         }
+
+        if (IsTnt == true && CrateHealth == 0)
+        {
+            Destroy(CrateMesh1);
+            Destroy(CrateMesh2);
+            Destroy(cratecollider);
+            NitroBlowUp.SetActive(true);
+
+        }
+
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -78,8 +91,26 @@ public class Crate : MonoBehaviour {
             
         }
 
+       if (other.tag == "Jump" && IsTnt == true)
+        {
+            Invoke("OnTntEnter", 3f);
+        }
+
+       else 
+
+
+        if (other.tag == "Jump")
+        {
+            CrateHealth -= 1;
+            crateDamnage.Play();
+
+        }
     }
 
+    void OnTntEnter()
+    {
+        CrateHealth -= 1;
+    }
    
 }
 

@@ -114,7 +114,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144339108927714}
-  m_LocalRotation: {x: -0, y: -0.4510754, z: -0, w: 0.8924859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6.77}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
@@ -421,9 +421,8 @@ MonoBehaviour:
   destoryTime: 1
   CrateMesh1: {fileID: 1621111789320036}
   CrateMesh2: {fileID: 1421031985647082}
-  NitroBlowUp: {fileID: 1957105239462174, guid: 632387cf38a9ecb49adbedca966ad8eb,
-    type: 2}
+  NitroBlowUp: {fileID: 0}
   cratecollider: {fileID: 65243354932881654}
-  masky: {fileID: 1904800670259382, guid: a56548f0217e59f49835b656b67571db, type: 2}
+  masky: {fileID: 0}
   IsNitro: 0
   IsAkuAku: 0
