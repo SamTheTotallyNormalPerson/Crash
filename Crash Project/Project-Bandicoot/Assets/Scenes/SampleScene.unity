@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47516423, g: 0.5385331, b: 0.5532882, a: 1}
+  m_IndirectSpecularColor: {r: 0.47516346, g: 0.53853303, b: 0.5532883, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,8 +131,9 @@ AudioSource:
   m_GameObject: {fileID: 58908318}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d887bf17fad7df40a66cc4eb6d8faa6, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a7e3276108fc4534da904ed4413f2125,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1ea0e2ddfe9fd514aab7e05ea1e4f3cf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -721,6 +722,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114985139338824426, guid: 65ce04a40d83b5b4b9efed589312aa36,
+        type: 2}
+      propertyPath: TntSound
+      value: 
+      objectReference: {fileID: 1635938160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65ce04a40d83b5b4b9efed589312aa36, type: 2}
   m_IsPrefabAsset: 0
@@ -2013,6 +2019,7 @@ MonoBehaviour:
   IsNitro: 0
   IsAkuAku: 0
   IsTnt: 0
+  TntSound: {fileID: 0}
 --- !u!82 &1450051903
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2194,6 +2201,107 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1635938159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1507946172989982, guid: 65ce04a40d83b5b4b9efed589312aa36,
+    type: 2}
+  m_PrefabInternal: {fileID: 340572061}
+--- !u!82 &1635938160
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635938159}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a7e3276108fc4534da904ed4413f2125,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: a14332372923a11498d5ceb28b860c07, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1654067842
 Prefab:
   m_ObjectHideFlags: 0
@@ -2291,6 +2399,7 @@ MonoBehaviour:
   IsNitro: 1
   IsAkuAku: 0
   IsTnt: 0
+  TntSound: {fileID: 0}
 --- !u!82 &1723084354
 AudioSource:
   m_ObjectHideFlags: 0

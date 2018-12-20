@@ -16,6 +16,9 @@ public class Crate : MonoBehaviour {
     public bool IsNitro;
     public bool IsAkuAku;
     public bool IsTnt;
+    public AudioSource TntSound;
+
+
     // Use this for initialization
     void Start () {
 
@@ -93,7 +96,8 @@ public class Crate : MonoBehaviour {
 
        if (other.tag == "Jump" && IsTnt == true)
         {
-            Invoke("OnTntEnter", 3f);
+            Invoke("OnTntEnter", 4.5f);
+            TntSound.Play();
         }
 
        else 
