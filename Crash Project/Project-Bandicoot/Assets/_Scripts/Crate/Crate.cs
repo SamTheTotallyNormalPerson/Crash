@@ -109,6 +109,11 @@ public class Crate : MonoBehaviour {
             crateDamnage.Play();
 
         }
+
+       if (other.tag == "Death")
+        {
+            CrateHealth -= 1;
+        }
     }
 
     void OnTntEnter()
