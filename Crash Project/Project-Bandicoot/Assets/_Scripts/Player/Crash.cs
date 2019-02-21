@@ -166,7 +166,6 @@ public class Crash : MonoBehaviour
                     PunchBox.SetActive(true);
                     Invoke("Punchy", .5f);
                 }
-
             }
             //
 
@@ -252,7 +251,7 @@ public class Crash : MonoBehaviour
             Wine.Play();
         }
         
-
+       
         
     }
 
@@ -273,4 +272,15 @@ public class Crash : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Crate")
+        {
+            moveDirection.y = jumpForce;
+            jumpSound.Play();
+            jumpBox.SetActive(true);
+        }
+    }
+
 }

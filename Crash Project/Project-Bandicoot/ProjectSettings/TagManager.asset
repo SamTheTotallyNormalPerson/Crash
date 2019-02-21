@@ -10,6 +10,9 @@ TagManager:
   - MaskPickUp
   - SaveArea
   - Jump
+  - Target
+  - Crate
+  - Crate Jump
   layers:
   - Default
   - TransparentFX
