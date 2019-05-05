@@ -20,7 +20,7 @@ public class AkuPickUo : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Crash.health += 1;
+
             Destroy(gameObject);
         }
     }
